@@ -55,8 +55,8 @@ class EchoBot(KikClientCallback):
         print("[+] Human has read the message with ID {}.".format(response.message_id))
 
     def on_group_message_received(self, chat_message: chatting.IncomingGroupChatMessage):
-        print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, 
-        # Hacked together to throw on heroku, not recommended to use.                                             chat_message.body))
+        print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, chat_message.body))
+        # Hacked together to throw on heroku, would not recommend using.
         if chat_message.body.lower() == "start":
           while True:
             try:
