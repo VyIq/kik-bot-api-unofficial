@@ -62,8 +62,8 @@ class EchoBot(KikClientCallback):
             try:
               self.client.send_chat_message(chat_message.group_jid, ".spin")
             except KeyboardInterrupt:
-            print("All done!")
-            time.sleep(301)
+              print("All done!")
+              time.sleep(301)
 
     def on_is_typing_event_received(self, response: chatting.IncomingIsTypingEvent):
         print("[+] {} is now {}typing.".format(response.from_jid, "not " if not response.is_typing else ""))
