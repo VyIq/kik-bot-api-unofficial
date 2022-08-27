@@ -56,14 +56,14 @@ class EchoBot(KikClientCallback):
 
     def on_group_message_received(self, chat_message: chatting.IncomingGroupChatMessage):
         print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, 
-    # Hacked together to throw on heroku, not recommended to use.                                             chat_message.body))
-    if chat_message.body.lower() == "start":
-        while True:
-          try:
-            self.client.send_chat_message(chat_message.group_jid, ".spin")
-          except KeyboardInterrupt:
-          print("All done!)
-          time.sleep(301)
+        # Hacked together to throw on heroku, not recommended to use.                                             chat_message.body))
+        if chat_message.body.lower() == "start":
+          while True:
+            try:
+              self.client.send_chat_message(chat_message.group_jid, ".spin")
+            except KeyboardInterrupt:
+            print("All done!)
+            time.sleep(301)
 
     def on_is_typing_event_received(self, response: chatting.IncomingIsTypingEvent):
         print("[+] {} is now {}typing.".format(response.from_jid, "not " if not response.is_typing else ""))
