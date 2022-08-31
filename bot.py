@@ -10,6 +10,7 @@ from kik_unofficial.datatypes.xmpp.roster import FetchRosterResponse, PeersInfoR
 from kik_unofficial.datatypes.xmpp.sign_up import RegisterResponse, UsernameUniquenessResponse
 from kik_unofficial.datatypes.xmpp.login import LoginResponse, ConnectionFailedResponse
 from kik_unofficial.datatypes.xmpp.xiphias import UsersResponse, UsersByAliasResponse
+from keepalive import keep_alive  # Remove this if running locally
 import random
 import time
 
