@@ -96,7 +96,7 @@ class EchoBot(KikClientCallback):
             ajid = str(chat_message.body.replace("-promote ", ""))
             self.client.promote_to_admin(chat_message.group_jid, ajid)
 
-        elif chat_message.body.from_jid == 'read_ajids' and chat_message.body.startswith("-demote"):
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-demote"):
             ajid = str(chat_message.body.replace("-demote ", ""))
             self.client.demote_admin(chat_message.group_jid, ajid)
 
