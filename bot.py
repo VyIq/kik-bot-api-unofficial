@@ -94,11 +94,11 @@ class EchoBot(KikClientCallback):
 
         elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-promote"):
             ajid = str(chat_message.body.replace("-promote ", ""))
-            self.client.ban_member_from_group(chat_message.group_jid, ajid)
+            self.client.promote_to_admin(chat_message.group_jid, ajid)
 
         elif chat_message.body.from_jid == 'read_ajids' and chat_message.body.startswith("-demote"):
             ajid = str(chat_message.body.replace("-demote ", ""))
-            self.client.ban_member_from_group(chat_message.group_jid, ajid)
+            self.client.demote_admin(chat_message.group_jid, ajid)
 
         elif chat_message.body.from_jid == 'read_ajids' and chat_message.body.startswith("-add"):
             username = str(chat_message.body.replace("-add ", ""))
