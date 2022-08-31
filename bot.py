@@ -100,7 +100,7 @@ class EchoBot(KikClientCallback):
             ajid = str(chat_message.body.replace("-demote ", ""))
             self.client.demote_admin(chat_message.group_jid, ajid)
 
-        elif chat_message.body.from_jid == 'read_ajids' and chat_message.body.startswith("-add"):
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-add"):
             username = str(chat_message.body.replace("-add ", ""))
             self.client.send_chat_message(chat_message.group_jid, "Attempting to add \"" + username + "\" to the group.")
             try:
@@ -126,7 +126,7 @@ class EchoBot(KikClientCallback):
             except:
                 self.client.send_chat_message(chat_message.group_jid, "Add attempt failed!")
 
-        elif chat_message.body.from_jid == 'read_ajids' and chat_message.body.startswith("-status"):
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-status"):
              with open("ops.txt", "r") as f:
                 self.client.send_chat_message(chat_message.group_jid, f.read())
 
