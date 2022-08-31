@@ -9,6 +9,7 @@ Basic bot done by me (@VyIq on Kik) to replace a friends Matrik4 bot. I'm very n
 - Merge my other bot features into this? (Not sure if I want to)
 - Refactor
 - Error handling for some of the commands
+- Need to fix the bot since it's not even working (Specifically the dashes before the commands)
 
 # Kik Bot API #
 Use this library to develop bots for [Kik Messenger](https://www.kik.com) that are essentially automated humans.
