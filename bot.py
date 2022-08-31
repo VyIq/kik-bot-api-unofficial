@@ -168,4 +168,4 @@ class EchoBot(KikClientCallback):
 if __name__ == '__main__':
     main()
 
-keep_alive() Remove this if running locally
+keep_alive()  # Remove this if running locally
