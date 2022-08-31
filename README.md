@@ -1,6 +1,15 @@
 # Modifications done by me :) #
 Basic bot done by me (@VyIq on Kik) to replace a friends Matrik4 bot. I'm very new to programming, especially in Python, so that's why there might be lots of redundant code and just overall bad practices. You're welcome to make it better and fork it or tell me a better way to do something (Maybe a better way to handle AJIDs). <3
 
+# To-do #
+- Add De-op
+- Remove ability to add duplicate AJIDs
+- Add ability to add multiple owners
+- Find a way to host the bot online
+- Merge my other bot features into this? (Not sure if I want to)
+- Refactor
+- Error handling for some of the commands
+
 # Kik Bot API #
 Use this library to develop bots for [Kik Messenger](https://www.kik.com) that are essentially automated humans.
 
