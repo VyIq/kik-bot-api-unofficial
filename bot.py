@@ -73,7 +73,7 @@ class EchoBot(KikClientCallback):
             ajid_list = open('ops.txt', 'a')
             ajid_list.writelines(ajid + "\n")
             ajid_list.close()
-            self.client.send_chat_message(chat_message.from_jid, "Opped " ajid)
+            self.client.send_chat_message(chat_message.from_jid, "Opped " + ajid)
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Hello, say 'help' for contact info or 'ping' to check if the bot is online.")
