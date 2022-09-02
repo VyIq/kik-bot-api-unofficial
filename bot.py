@@ -84,24 +84,24 @@ class EchoBot(KikClientCallback):
 
         print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, chat_message.body))
 
-        if chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-ban"):
-            ajid = str(chat_message.body.replace("-ban ", ""))
+        if chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("ban"):
+            ajid = str(chat_message.body.replace("ban ", ""))
             self.client.ban_member_from_group(chat_message.group_jid, ajid)
  
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-kick"):
-            ajid = str(chat_message.body.replace("-kick ", ""))
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("kick"):
+            ajid = str(chat_message.body.replace("kick ", ""))
             self.client.remove_peer_from_group(chat_message.group_jid, ajid)
 
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-promote"):
-            ajid = str(chat_message.body.replace("-promote ", ""))
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("promote"):
+            ajid = str(chat_message.body.replace("promote ", ""))
             self.client.promote_to_admin(chat_message.group_jid, ajid)
 
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-demote"):
-            ajid = str(chat_message.body.replace("-demote ", ""))
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("demote"):
+            ajid = str(chat_message.body.replace("demote ", ""))
             self.client.demote_admin(chat_message.group_jid, ajid)
 
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-add"):
-            username = str(chat_message.body.replace("-add ", ""))
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("add"):
+            username = str(chat_message.body.replace("add ", ""))
             self.client.send_chat_message(chat_message.group_jid, "Attempting to add \"" + username + "\" to the group.")
             try:
                 def get_jid(username):
@@ -126,7 +126,7 @@ class EchoBot(KikClientCallback):
             except:
                 self.client.send_chat_message(chat_message.group_jid, "Add attempt failed!")
 
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("-status"):
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("status"):
              with open("ops.txt", "r") as f:
                 self.client.send_chat_message(chat_message.group_jid, f.read())
 
