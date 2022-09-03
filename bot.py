@@ -68,13 +68,26 @@ class EchoBot(KikClientCallback):
         elif chat_message.body.lower() == "help":
             self.client.send_chat_message(chat_message.from_jid, "This bot is owned by @RETROUX and programmed by @VyIq. \n\n Contact either for questions or concerns! <3")
 
-        elif chat_message.from_jid == 'retroux_502@talk.kik.com' and chat_message.body.startswith("-op"):
+        elif chat_message.from_jid == 'retroux_502@talk.kik.com' and chat_message.body.startswith("op"):
             ajid = str(chat_message.body.replace("op ", ""))
             ajid_list = open('ops.txt', 'a')
             ajid_list.writelines(ajid + "\n")
             ajid_list.close()
             self.client.send_chat_message(chat_message.from_jid, "Opped " + ajid)
 
+        #  elif chat_message.from_jid == 'OWNER' and chat_message.body.startswith("alert"):
+            #  alert_message = str(chat_message.body.replace("alert", ""))
+            #  Replace this with rewritten read_ajids() def eventually.
+            #  group_jids = open('gjids.txt', 'r')
+            #  lines = group_jids.readlines()
+
+            #  count = 0
+
+            #  for line in lines:
+                #  count += 1
+                #  print(line.strip())
+                #  time.sleep(0.3)
+            
         else:
             self.client.send_chat_message(chat_message.from_jid, "Hello, say 'help' for contact info or 'ping' to check if the bot is online.")
 
