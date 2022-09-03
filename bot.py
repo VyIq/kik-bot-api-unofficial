@@ -48,7 +48,7 @@ class EchoBot(KikClientCallback):
     def on_login_ended(self, response: LoginResponse):
         print("Full name: {} {}".format(response.first_name, response.last_name))
 
-    def read_ajids():
+    def read_ajids():  # Need to make this function more universal.
         ajid_list = open('ops.txt', 'r')
         lines = ajid_list.readlines()
 
@@ -56,7 +56,7 @@ class EchoBot(KikClientCallback):
 
         for line in lines:
             count += 1
-            print("{}".format(line.strip()))
+            print(line.strip())
             time.sleep(0.3)
 
     def on_chat_message_received(self, chat_message: chatting.IncomingChatMessage):
