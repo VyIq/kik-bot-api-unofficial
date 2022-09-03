@@ -10,6 +10,7 @@ Basic bot done by me (@VyIq on Kik) to replace a friends Matrik4 bot. I'm very n
 - Refactor
 - Error handling for some of the commands
 - Need to fix the bot since it's not even working (Specifically the dashes before the commands)
+- Learn database management and functions, why do I keep trying to store stuff in .txt smh.
 
 # Kik Bot API #
 Use this library to develop bots for [Kik Messenger](https://www.kik.com) that are essentially automated humans.
