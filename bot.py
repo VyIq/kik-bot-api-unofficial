@@ -79,7 +79,7 @@ class EchoBot(KikClientCallback):
             #  alert_message = str(chat_message.body.replace("alert", ""))
             #  Replace this with rewritten read_ajids() def eventually.
             #  group_jids = open('gjids.txt', 'r')
-            #  lines = group_jids.readlines()
+            #  lines = group_jids.readlines()            
 
             #  count = 0
 
@@ -87,6 +87,7 @@ class EchoBot(KikClientCallback):
                 #  count += 1
                 #  print(line.strip())
                 #  time.sleep(0.3)
+                #  self.client.send_chat_message(group_jids, alert_message)
             
         else:
             self.client.send_chat_message(chat_message.from_jid, "Hello, say 'help' for contact info or 'ping' to check if the bot is online.")
