@@ -48,15 +48,15 @@ class EchoBot(KikClientCallback):
     def on_login_ended(self, response: LoginResponse):
         print("Full name: {} {}".format(response.first_name, response.last_name))
 
-    def read_list(file, mode):
-        list = open(file + '.txt', 'mode')
+    def read_ajids():
+        list = open('ops.txt', 'a')
         lines = list.readlines()
 
         count = 0
 
         for line in lines:
             count += 1
-            print(line.strip())
+            line.strip()
             time.sleep(0.3)
 
     def on_chat_message_received(self, chat_message: chatting.IncomingChatMessage):
