@@ -48,9 +48,9 @@ class EchoBot(KikClientCallback):
     def on_login_ended(self, response: LoginResponse):
         print("Full name: {} {}".format(response.first_name, response.last_name))
 
-    def read_ajids():  # Need to make this function more universal.
-        ajid_list = open('ops.txt', 'r')
-        lines = ajid_list.readlines()
+    def read_list(file, mode):
+        list = open(file + '.txt', 'mode')
+        lines = list.readlines()
 
         count = 0
 
@@ -69,10 +69,7 @@ class EchoBot(KikClientCallback):
             self.client.send_chat_message(chat_message.from_jid, "This bot is owned by @RETROUX and programmed by @VyIq. \n\n Contact either for questions or concerns! <3")
 
         elif chat_message.from_jid == 'retroux_502@talk.kik.com' and chat_message.body.startswith("op"):
-            ajid = str(chat_message.body.replace("op ", ""))
-            ajid_list = open('ops.txt', 'a')
-            ajid_list.writelines(ajid + "\n")
-            ajid_list.close()
+            ajid = str(chat_message.body.replace("op ", "")
             self.client.send_chat_message(chat_message.from_jid, "Opped " + ajid)
 
         #  elif chat_message.from_jid == 'OWNER' and chat_message.body.startswith("alert"):
