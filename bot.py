@@ -85,7 +85,7 @@ class EchoBot(KikClientCallback):
                 #  print(line.strip())
                 #  time.sleep(0.3)
                 #  self.client.send_chat_message(lines, alert_message)
-            
+
         else:
             self.client.send_chat_message(chat_message.from_jid, "Hello, say 'help' for contact info or 'ping' to check if the bot is online.")
 
