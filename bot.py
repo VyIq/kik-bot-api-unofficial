@@ -95,7 +95,7 @@ class EchoBot(KikClientCallback):
 
         print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, chat_message.body))
 
-        if chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("ban"):
+        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("ban"):
             ajid = str(chat_message.body.replace("ban ", ""))
             self.client.ban_member_from_group(chat_message.group_jid, ajid)
  
