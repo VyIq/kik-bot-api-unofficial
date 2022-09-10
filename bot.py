@@ -138,7 +138,7 @@ class EchoBot(KikClientCallback):
                 self.client.send_chat_message(chat_message.group_jid, "Add attempt failed!")
 
         elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("status"):
-             with open("ops.txt", "r") as f:
+            with open("ops.txt", "r") as f:
                 self.client.send_chat_message(chat_message.group_jid, f.read())
 
         elif chat_message.body.lower() == "ping":
