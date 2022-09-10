@@ -98,7 +98,7 @@ class EchoBot(KikClientCallback):
         elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("ban"):
             ajid = str(chat_message.body.replace("ban ", ""))
             self.client.ban_member_from_group(chat_message.group_jid, ajid)
- 
+
         elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("kick"):
             ajid = str(chat_message.body.replace("kick ", ""))
             self.client.remove_peer_from_group(chat_message.group_jid, ajid)
