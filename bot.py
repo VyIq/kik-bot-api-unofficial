@@ -111,36 +111,6 @@ class EchoBot(KikClientCallback):
             ajid = str(chat_message.body.replace("demote ", ""))
             self.client.demote_admin(chat_message.group_jid, ajid)
 
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("add"):
-            username = str(chat_message.body.replace("add ", ""))
-            self.client.send_chat_message(chat_message.group_jid, "Attempting to add \"" + username + "\" to the group.")
-            try:
-                def get_jid(username):
-                    try:
-                        grab_jid = self.client.get_jid(username)
-                        return grab_jid
-                    except:
-                        return False
-                jid = get_jid(username)
-                attempts = 1
-                while jid == False:
-                    if attempts > 5:
-                        self.client.send_chat_message(chat_message.group_jid,
-                                                      "I was unable to get the JID for \"" + username + "\"! Please try again.\n(Make sure the username is valid!)")
-                        jid = ""
-                    else:
-                        jid = get_jid(username)
-                        attempts = attempts + 1
-                self.client.add_peer_to_group(chat_message.group_jid, jid)
-                if jid:
-                    self.client.send_chat_message(chat_message.group_jid, "Add attempt complete!")
-            except:
-                self.client.send_chat_message(chat_message.group_jid, "Add attempt failed!")
-
-        elif chat_message.from_jid == 'read_ajids' and chat_message.body.startswith("status"):
-            with open("ops.txt", "r") as f:
-                self.client.send_chat_message(chat_message.group_jid, f.read())
-
         elif chat_message.body.lower() == "ping":
             self.client.send_chat_message(chat_message.group_jid, "Pong")
 
