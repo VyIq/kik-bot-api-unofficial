@@ -111,6 +111,8 @@ class EchoBot(KikClientCallback):
 
     def on_status_message_received(self, response: chatting.IncomingStatusResponse):
         pass
+        # if 'has joined' and group_locked
+        # elif group_lockedb
 
     def on_username_uniqueness_received(self, response: UsernameUniquenessResponse):
         print("Is {} a unique username? {}".format(response.username, response.unique))
