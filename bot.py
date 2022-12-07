@@ -66,9 +66,9 @@ class EchoBot(KikClientCallback):
             self.client.send_chat_message(chat_message.from_jid, "Pong")
 
         elif chat_message.body.lower() == "help":
-            self.client.send_chat_message(chat_message.from_jid, "This bot is owned by @RETROUX and programmed by @VyIq. \n\n Contact either for questions or concerns! <3")
+            self.client.send_chat_message(chat_message.from_jid, "<3")
 
-        elif chat_message.from_jid == 'retroux_502@talk.kik.com' and chat_message.body.startswith("op"):
+        elif chat_message.from_jid == '@talk.kik.com' and chat_message.body.startswith("op"):
             ajid = str(chat_message.body.replace("op ", "")
             self.client.send_chat_message(chat_message.from_jid, "Opped " + ajid)
 
